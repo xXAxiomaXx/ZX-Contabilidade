@@ -102,12 +102,12 @@
         </div>
       </div>
     </section>
-    <section id="solutions" class="container text-center items-center py-10">
+    <section id="solutions" class="container text-center items-center py-10 ">
       <h2 class="title prim text-white text-4xl md:text-5xl mb-24">
         Nossas Soluções
       </h2>
-      <div class="timeline">
-        <div class="solution w-screen px-20">
+      <div class="timeline md:before:display-none">
+        <div class="solution p-1 md:flex-row flex-col-reverse w-screen px-20">
           <div class="text md:w-4/12">
             <div class="prim text-xl md:text-3xl mb-2 font-bold">
               Contabilidade Digital
@@ -116,9 +116,9 @@
               Contabilidade especializada no seu negócio.
             </div>
           </div>
-          <div class="number text-3xl">1</div>
+          <div class="number md:absolute relative left-0 translate-none before:display-none text-3xl">1</div>
         </div>
-        <div class="solution w-screen px-20">
+        <div class="solution p-1 md:flex-row-reverse flex-col-reverse w-screen px-20">
           <div class="text md:w-4/12">
             <div class="prim text-xl md:text-3xl mb-2 font-bold">
               Terceirização Financeira
@@ -128,9 +128,9 @@
               e receber.
             </div>
           </div>
-          <div class="number text-3xl right">2</div>
+          <div class="number md:absolute relative text-3xl right">2</div>
         </div>
-        <div class="solution w-screen px-20">
+        <div class="solution p-1 md:flex-row flex-col-reverse w-screen px-20">
           <div class="text md:w-4/12">
             <div class="prim text-xl md:text-3xl mb-2 font-bold">
               Terceirização de Folha de pagamento
@@ -140,9 +140,9 @@
               qualificado com uma equipe preparada.
             </div>
           </div>
-          <div class="number text-3xl">3</div>
+          <div class="number md:absolute relative text-3xl">3</div>
         </div>
-        <div class="solution w-screen px-20">
+        <div class="solution p-1 md:flex-row-reverse flex-col-reverse w-screen px-20">
           <div class="text md:w-4/12">
             <div class="prim text-xl md:text-3xl mb-2 font-bold">
               Planejamento Tributário
@@ -152,9 +152,9 @@
               reduzir a carga tributária.
             </div>
           </div>
-          <div class="number text-3xl right">4</div>
+          <div class="number md:absolute relative text-3xl right">4</div>
         </div>
-        <div class="solution w-screen px-20">
+        <div class="solution p-1 md:flex-row flex-col-reverse w-screen px-20">
           <div class="text md:w-4/12">
             <div class="prim text-xl md:text-3xl mb-2 font-bold">
               Consultoria Empresarial
@@ -164,9 +164,9 @@
               plano de cargos e salários.
             </div>
           </div>
-          <div class="number text-3xl">5</div>
+          <div class="number md:absolute relative text-3xl">5</div>
         </div>
-        <div class="solution w-screen px-20">
+        <div class="solution p-1 md:flex-row-reverse flex-col-reverse w-screen px-20">
           <div class="text md:w-4/12">
             <div class="prim text-xl md:text-3xl mb-2 font-bold">
               Registro de Marca
@@ -175,7 +175,7 @@
               Registro de marca junto ao INPI
             </div>
           </div>
-          <div class="number text-3xl right">6</div>
+          <div class="number md:absolute relative left-0 translate-none text-3xl right">6</div>
         </div>
       </div>
     </section>
@@ -520,7 +520,7 @@
   <style>
     *,
     html {
-      scroll-behavior: smooth !important;
+      scroll-behavior: smooth;
     }
     .arrow {
       clip-path: polygon(93% 0, 100% 50%, 93% 100%, 0% 100%, 7% 50%, 0% 0%);
@@ -587,7 +587,7 @@
       justify-content: center;
       border-radius: 25%;
       border: #4b5563 1px solid;
-      position: absolute;
+      /* position: absolute; */
       left: 50%;
       transform: translateX(-50%);
       font-family: "Fraunces", serif;
@@ -606,14 +606,11 @@
     .solution .right::before {
       transform: translate(0%, 0) rotate(0deg);
     }
-    @media screen and (width <= 48rem) {
+    @media screen and (max-width: 48rem) {
       .timeline::before {
         display: none;
       }
-      .solution {
-        flex-direction: column-reverse;
-        padding: 0.75rem;
-      }
+      
       .solution .number {
         position: relative;
         transform: translateX(0);
